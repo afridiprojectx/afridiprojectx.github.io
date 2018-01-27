@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Stock Master V1</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="vendors/bootstrap-3.3.7/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="vendors/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="vendors/jquery-3.2.1/jquery.min.js"></script>
+  <script src="vendors/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+
+</head>
+<!--BODY START -->
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<!--SIDENAV START -->
+<div id="divSideNav" class="sidenav">
+  <!--SIDENAV CLOSE ICON -->
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-times" aria-hidden="true"></i></a>
+
+  <!--SIDENAV - ADMINISTRATION - DROPDOWN -->
+  <a style="cursor: pointer;" type="button" data-toggle="collapse" data-target="#collapseAdministration"><i class="fa fa-users" aria-hidden="true"></i> Administration</a>
+  <div id="collapseAdministration" class="collapse">
+    <a href="ADM001-EmployeeCheckIn">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Employee Check In - ADM001</a>
+  </div>
+
+  <!--SIDENAV - MASTER - DROPDOWN -->
+  <a style="cursor: pointer;" type="button" data-toggle="collapse" data-target="#collapseMaster"><i class="fa fa-book" aria-hidden="true"></i> Master</a>
+  <div id="collapseMaster" class="collapse">
+    <a href="MAS001-Company">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Company - MAS001</a>
+    <a href="MAS002-Employment">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Employment - MAS002</a>
+    <a href="MAS003-Department">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Department - MAS003</a>
+    <a href="MAS004-Supplier">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Supplier - MAS004</a>
+    <a href="MAS005-Customer">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Customer - MAS005</a>
+    <a href="MAS006-Vehicle">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Vehicle - MAS006</a>
+    <a href="MAS007-Model">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Model - MAS007</a>
+    <a href="MAS008-Item">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Item - MAS008</a>
+    <a href="MAS009-ItemSubcategory">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Item Subcategory - MAS009</a>
+    <a href="MAS010-PettyCash">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Petty Cash - MAS010</a>
+    <a href="MAS011-Bank">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Bank - MAS011</a>
+  </div>
+
+  <!--SIDENAV - PROCUMENT - DROPDOWN -->
+  <a style="cursor: pointer;" type="button" data-toggle="collapse" data-target="#collapsePurchases"><i class="fa fa-arrow-right" aria-hidden="true"></i> Purchases</a>
+  <div id="collapsePurchases" class="collapse">
+    <a href="PUR001-PurchaseOrder">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Purchase Order - PUR001</a>
+    <a href="PUR002-PurchaseInvoice">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Purchase Invoice - PUR002</a>
+  </div>
+
+  <!--SIDENAV - SALES - DROPDOWN -->
+  <a style="cursor: pointer;" type="button" data-toggle="collapse" data-target="#collapseSales"><i class="fa fa-arrow-left" aria-hidden="true"></i> Sales</a>
+  <div id="collapseSales" class="collapse">
+    <a href="SAL001-SalesOrder">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Sales Order - SAL001</a>
+    <a href="SAL002-SalesInvoice">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Sales Invoice - SAL002</a>
+    <a href="SAL003-SalesLotAllocation">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Sales Lot Allocation - SAL003</a>
+    <a href="SAL004-SalesBulkInvoice">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Sales Bulk Invoice - SAL004</a>
+  </div>
+
+  <!--SIDENAV - SERVICES - DROPDOWN -->
+  <a style="cursor: pointer;" type="button" data-toggle="collapse" data-target="#collapseServices"><i class="fa fa-handshake-o" aria-hidden="true"></i> Services</a>
+  <div id="collapseServices" class="collapse">
+    <a href="SER001-ServiceOrder">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Service Order - SER001</a>
+  </div>
+
+  <!--SIDENAV - INVENTORY - DROPDOWN -->
+  <a style="cursor: pointer;" type="button" data-toggle="collapse" data-target="#collapseInventory"><i class="fa fa-database" aria-hidden="true"></i> Inventory</a>
+  <div id="collapseInventory" class="collapse">
+    <a href="STO001-StockTransactions">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Stock Transactions - STO001</a>
+    <a href="STO002-StockBalance">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Stock Balance - STO002</a>
+    <a href="STO003-StockMovement">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Stock Movement - STO003</a>
+    <a href="STO004-ItemLotBalance">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Item Lot Balance - STO004</a>
+  </div>
+
+  <!--SIDENAV - FINANCE - DROPDOWN -->
+  <a style="cursor: pointer;" type="button" data-toggle="collapse" data-target="#collapseFinance"><i class="fa fa-money" aria-hidden="true"></i> Finance</a>
+  <div id="collapseFinance" class="collapse">
+    <a href="FIN001-AccountTransactions">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Account Transactions - FIN001</a>
+    <a href="FIN002-AccountBalance">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Account Balance - FIN002</a>
+    <a href="FIN003-CashMovement">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Cash Movement - FIN003</a>
+    <a href="FIN004-OpenFinancePeriod">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Open Finance Period - FIN004</a>
+  </div>
+
+  <!--SIDENAV - REPORTS - DROPDOWN -->
+  <a style="cursor: pointer;" type="button" data-toggle="collapse" data-target="#collapseReports"><i class="fa fa-bar-chart" aria-hidden="true"></i> Reports</a>
+  <div id="collapseReports" class="collapse">
+    <a href="REP001-ItemWiseSalesReport">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Item Wise Sales Report - REP001</a>
+    <a href="REP002-CustomerSalesHistoryReport">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i> Customer Sales History Report - REP002</a>
+  </div>
+</div>
+<!--SIDENAV END -->
+ 
+<!--NAVTOBEPUSHED START -->
+<div id="divToBePushed">
+  <!--MAINNAV START -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span><i class="fa fa-bars" aria-hidden="true"></i></span>                      
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-left">
+          <!--MAINNAV - MENU - ITEM -->
+          <li class="nav-item">
+            <a href="#" onclick="openNav()"><i class="fa fa-bars" aria-hidden="true"></i> Menu</a>
+          </li>
+
+          <!--MAINNAV - DASHBOARD -ITEM -->
+          <li class="nav-item">
+            <a href="#"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a>
+          </li>
+          
+          <!--MAINNAV - TOOLS - DROPDOWN -->
+          <li class="dropdown">
+            <a class="dropdown-toggle"  data-toggle="dropdown" href="#"><i class="fa fa-wrench" aria-hidden="true"></i> Tools<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Calculator</a></li>
+              <li><a href="#">Excel</a></li>
+              <li><a href="#">Notepad</a></li>
+              <li><a href="#">Browser</a></li>
+            </ul>
+          </li>
+
+          <!--MAINNAV - WINDOW - DROPDOWN -->
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-window-restore" aria-hidden="true"></i> Window<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Close All</a></li>
+            </ul>
+          </li>
+
+          <!--MAINNAV - SETTINGS - DROPDOWN -->
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-cogs" aria-hidden="true"></i> Settings<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Login</a></li>
+              <li><a href="#">User Accounts</a></li>
+              <li><a href="#">Software Information</a></li> 
+              <div class="divider"></div>
+              <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Signout</a></li> 
+            </ul>
+          </li>
+
+          <!--MAINNAV - SEARCH - TEXTBOX -->
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="e.g. SOS001" style="width: 130px;">
+            </div>
+          </form>
+
+          <!--<li class="nav-item">
+            <a href="#"><i class="fa fa-plus-square" aria-hidden="true"></i></a>
+          </li>-->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--MAINNAV END -->
+
+
+  <div id="content" class="panel panel-default"></div>
+  <script src="js/navController/1-navControllerEmployee.js"></script>
+  <script src="js/navController/2-navControllerMaster.js"></script>
+  <script src="js/navController/3-navControllerPurchases.js"></script>
+  <script src="js/navController/4-navControllerSales.js"></script>
+  <script src="js/navController/5-navControllerServices.js"></script>
+  <script src="js/navController/6-navControllerInventory.js"></script>
+  <script src="js/navController/7-navControllerFinance.js"></script>
+  <script src="js/navController/8-navControllerReports.js"></script>
+
+
+</div> 
+<!--NAVTOBEPUSHED END -->
+
+<!--SIDENAV HANDLER JS -->
+<script src="js/navController/0-navControllerPushPull.js"></script>
+</body>
+<!--BODY START -->
+</html>
